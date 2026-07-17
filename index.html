@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Hotel Connector</title>
+
+    <script src="https://connectors.tableau.com/libs/tableauwdc-2.3.latest.js"></script>
+
+    <script>
+
+        (function() {
+
+            var myConnector = tableau.makeConnector();
+
+            myConnector.getSchema = function(schemaCallback) {
+
+                var cols = [
+
+    {
+        id: "Hotel_ID",
+        dataType: tableau.dataTypeEnum.int
+    },
+
+    {
+        id: "Hotel_Brand",
+        dataType: tableau.dataTypeEnum.string
+    },
+
+    {
+        id: "Total_Words",
+        dataType: tableau.dataTypeEnum.int
+    },
+
+    {
+        id: "Count_Good",
+        dataType: tableau.dataTypeEnum.int
+    },
+
+    {
+        id: "Count_Average",
+        dataType: tableau.dataTypeEnum.int
+    },
+
+    {
+        id: "Count_Medium",
+        dataType: tableau.dataTypeEnum.int
+    },
+
+    {
+        id: "Count_Worst",
+        dataType: tableau.dataTypeEnum.int
+    },
+
+    {
+        id: "Count_Neutral",
+        dataType: tableau.dataTypeEnum.int
+    },
+
+    {
+        id: "Cluster_0",
+        dataType: tableau.dataTypeEnum.int
+    },
+
+    {
+        id: "Cluster_1",
+        dataType: tableau.dataTypeEnum.int
+    },
+
+    {
+        id: "Cluster_2",
+        dataType: tableau.dataTypeEnum.int
+    },
+
+    {
+        id: "Cluster_3",
+        dataType: tableau.dataTypeEnum.int
+    },
+
+    {
+        id: "Cluster_4",
+        dataType: tableau.dataTypeEnum.int
+    }
+];
+
+                var tableSchema = {
+                    id: "hotelData",
+                    alias: "Hotel Sentiment Data",
+                    columns: cols
+                };
+
+                schemaCallback([tableSchema]);
+            };
+
+
+            myConnector.getData = function(table, doneCallback) {
+
+                fetch("http://127.0.0.1:8000/hotels")
+
+                    .then(response => response.json())
+
+                    .then(data => {
+
+                        table.appendRows(data);
+
+                        doneCallback();
+                    });
+            };
+
+            tableau.registerConnector(myConnector);
+
+        })();
+
+        function submitConnector() {
+
+            tableau.connectionName = "Hotel API Connector";
+
+            tableau.submit();
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <h2>Hotel Sentiment API</h2>
+
+    <button onclick="submitConnector()">
+        Connect Tableau
+    </button>
+
+</body>
+
+</html>
