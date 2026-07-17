@@ -1,0 +1,1408 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20261.26.0410.0924                               -->
+<workbook original-version='18.1' source-build='2026.1.1 (20261.26.0410.0924)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <Heatmap />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='Select Hotel' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;MARRIOTT_UNSUPERVISED_TOPICS&quot;'>
+        <calculation class='tableau' formula='&quot;MARRIOTT_UNSUPERVISED_TOPICS&quot;' />
+        <members>
+          <member value='&quot;MARRIOTT_UNSUPERVISED_TOPICS&quot;' />
+          <member value='&quot;HILTON_UNSUPERVISED_TOPICS&quot;' />
+          <member value='&quot;HOLIDAY_INN_UNSUPERVISED_TOPICS&quot;' />
+        </members>
+      </column>
+    </datasource>
+    <datasource caption='Hotel API Connector' inline='true' name='federated.1dddnoy1ng1zhj1djo28q1451fhx' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Hotel API Connector' name='webdata-direct.1sd2g3l1d9y22b14z2pco06j2gph'>
+            <connection APIVersion='' authType='none' authentication='no' channel='http' class='webdata-direct' connectionName='Hotel API Connector' filename='' increment-key='' path='/' port='8080' scriptVersion='' secondary_whitelist='' server='localhost' urlQuery='fresh=99' username='' usernameAlias='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='webdata-direct.1sd2g3l1d9y22b14z2pco06j2gph' name='Hotel Sentiment Data' table='[hotelData]' type='table' />
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>Hotel_ID</remote-name>
+            <remote-type>-1</remote-type>
+            <local-name>[Hotel_ID]</local-name>
+            <parent-name>[Hotel Sentiment Data]</parent-name>
+            <remote-alias>Hotel_ID</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='RemoteTypeName'>&quot;int&quot;</attribute>
+              <attribute datatype='boolean' name='filterable_column'>false</attribute>
+            </attributes>
+            <object-id>[hotelData_5F0D8AA7D705467D8A036379B3C70F30]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Hotel_Brand</remote-name>
+            <remote-type>-1</remote-type>
+            <local-name>[Hotel_Brand]</local-name>
+            <parent-name>[Hotel Sentiment Data]</parent-name>
+            <remote-alias>Hotel_Brand</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='RemoteTypeName'>&quot;string&quot;</attribute>
+              <attribute datatype='boolean' name='filterable_column'>false</attribute>
+            </attributes>
+            <object-id>[hotelData_5F0D8AA7D705467D8A036379B3C70F30]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Total_Words</remote-name>
+            <remote-type>-1</remote-type>
+            <local-name>[Total_Words]</local-name>
+            <parent-name>[Hotel Sentiment Data]</parent-name>
+            <remote-alias>Total_Words</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='RemoteTypeName'>&quot;int&quot;</attribute>
+              <attribute datatype='boolean' name='filterable_column'>false</attribute>
+            </attributes>
+            <object-id>[hotelData_5F0D8AA7D705467D8A036379B3C70F30]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Count_Good</remote-name>
+            <remote-type>-1</remote-type>
+            <local-name>[Count_Good]</local-name>
+            <parent-name>[Hotel Sentiment Data]</parent-name>
+            <remote-alias>Count_Good</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='RemoteTypeName'>&quot;int&quot;</attribute>
+              <attribute datatype='boolean' name='filterable_column'>false</attribute>
+            </attributes>
+            <object-id>[hotelData_5F0D8AA7D705467D8A036379B3C70F30]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Count_Average</remote-name>
+            <remote-type>-1</remote-type>
+            <local-name>[Count_Average]</local-name>
+            <parent-name>[Hotel Sentiment Data]</parent-name>
+            <remote-alias>Count_Average</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='RemoteTypeName'>&quot;int&quot;</attribute>
+              <attribute datatype='boolean' name='filterable_column'>false</attribute>
+            </attributes>
+            <object-id>[hotelData_5F0D8AA7D705467D8A036379B3C70F30]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Count_Medium</remote-name>
+            <remote-type>-1</remote-type>
+            <local-name>[Count_Medium]</local-name>
+            <parent-name>[Hotel Sentiment Data]</parent-name>
+            <remote-alias>Count_Medium</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='RemoteTypeName'>&quot;int&quot;</attribute>
+              <attribute datatype='boolean' name='filterable_column'>false</attribute>
+            </attributes>
+            <object-id>[hotelData_5F0D8AA7D705467D8A036379B3C70F30]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Count_Worst</remote-name>
+            <remote-type>-1</remote-type>
+            <local-name>[Count_Worst]</local-name>
+            <parent-name>[Hotel Sentiment Data]</parent-name>
+            <remote-alias>Count_Worst</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='RemoteTypeName'>&quot;int&quot;</attribute>
+              <attribute datatype='boolean' name='filterable_column'>false</attribute>
+            </attributes>
+            <object-id>[hotelData_5F0D8AA7D705467D8A036379B3C70F30]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Count_Neutral</remote-name>
+            <remote-type>-1</remote-type>
+            <local-name>[Count_Neutral]</local-name>
+            <parent-name>[Hotel Sentiment Data]</parent-name>
+            <remote-alias>Count_Neutral</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='RemoteTypeName'>&quot;int&quot;</attribute>
+              <attribute datatype='boolean' name='filterable_column'>false</attribute>
+            </attributes>
+            <object-id>[hotelData_5F0D8AA7D705467D8A036379B3C70F30]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Cluster_0</remote-name>
+            <remote-type>-1</remote-type>
+            <local-name>[Cluster_0]</local-name>
+            <parent-name>[Hotel Sentiment Data]</parent-name>
+            <remote-alias>Cluster_0</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='RemoteTypeName'>&quot;int&quot;</attribute>
+              <attribute datatype='boolean' name='filterable_column'>false</attribute>
+            </attributes>
+            <object-id>[hotelData_5F0D8AA7D705467D8A036379B3C70F30]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Cluster_1</remote-name>
+            <remote-type>-1</remote-type>
+            <local-name>[Cluster_1]</local-name>
+            <parent-name>[Hotel Sentiment Data]</parent-name>
+            <remote-alias>Cluster_1</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='RemoteTypeName'>&quot;int&quot;</attribute>
+              <attribute datatype='boolean' name='filterable_column'>false</attribute>
+            </attributes>
+            <object-id>[hotelData_5F0D8AA7D705467D8A036379B3C70F30]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Cluster_2</remote-name>
+            <remote-type>-1</remote-type>
+            <local-name>[Cluster_2]</local-name>
+            <parent-name>[Hotel Sentiment Data]</parent-name>
+            <remote-alias>Cluster_2</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='RemoteTypeName'>&quot;int&quot;</attribute>
+              <attribute datatype='boolean' name='filterable_column'>false</attribute>
+            </attributes>
+            <object-id>[hotelData_5F0D8AA7D705467D8A036379B3C70F30]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Cluster_3</remote-name>
+            <remote-type>-1</remote-type>
+            <local-name>[Cluster_3]</local-name>
+            <parent-name>[Hotel Sentiment Data]</parent-name>
+            <remote-alias>Cluster_3</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='RemoteTypeName'>&quot;int&quot;</attribute>
+              <attribute datatype='boolean' name='filterable_column'>false</attribute>
+            </attributes>
+            <object-id>[hotelData_5F0D8AA7D705467D8A036379B3C70F30]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Cluster_4</remote-name>
+            <remote-type>-1</remote-type>
+            <local-name>[Cluster_4]</local-name>
+            <parent-name>[Hotel Sentiment Data]</parent-name>
+            <remote-alias>Cluster_4</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='RemoteTypeName'>&quot;int&quot;</attribute>
+              <attribute datatype='boolean' name='filterable_column'>false</attribute>
+            </attributes>
+            <object-id>[hotelData_5F0D8AA7D705467D8A036379B3C70F30]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Measure Names' datatype='string' name='[:Measure Names]' role='dimension' type='nominal' />
+      <column caption='Cluster 0' datatype='integer' name='[Cluster_0]' role='measure' type='quantitative' />
+      <column caption='Cluster 1' datatype='integer' name='[Cluster_1]' role='measure' type='quantitative' />
+      <column caption='Cluster 2' datatype='integer' name='[Cluster_2]' role='measure' type='quantitative' />
+      <column caption='Cluster 3' datatype='integer' name='[Cluster_3]' role='measure' type='quantitative' />
+      <column caption='Cluster 4' datatype='integer' name='[Cluster_4]' role='measure' type='quantitative' />
+      <column caption='Count Average' datatype='integer' name='[Count_Average]' role='measure' type='quantitative' />
+      <column caption='Count Good' datatype='integer' name='[Count_Good]' role='measure' type='quantitative' />
+      <column caption='Count Medium' datatype='integer' name='[Count_Medium]' role='measure' type='quantitative' />
+      <column caption='Count Neutral' datatype='integer' name='[Count_Neutral]' role='measure' type='quantitative' />
+      <column caption='Count Worst' datatype='integer' name='[Count_Worst]' role='measure' type='quantitative' />
+      <column caption='Hotel Brand' datatype='string' name='[Hotel_Brand]' role='dimension' type='nominal' />
+      <column caption='Hotel ID' datatype='integer' name='[Hotel_ID]' role='dimension' type='ordinal' />
+      <column caption='Measure Values' datatype='real' name='[Multiple Values]' role='measure' type='quantitative' />
+      <column caption='Total Words' datatype='integer' name='[Total_Words]' role='measure' type='quantitative' />
+      <column caption='Hotel Sentiment Data' datatype='table' name='[__tableau_internal_object_id__].[hotelData_5F0D8AA7D705467D8A036379B3C70F30]' role='measure' type='quantitative' />
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='Hotel Sentiment Data' id='hotelData_5F0D8AA7D705467D8A036379B3C70F30'>
+            <properties context=''>
+              <relation connection='webdata-direct.1sd2g3l1d9y22b14z2pco06j2gph' name='Hotel Sentiment Data' table='[hotelData]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='Hotel API Connector (2)' inline='true' name='federated.1eyermy04jhyma18xo6b30o2b3b4' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Hotel API Connector' name='webdata-direct.0x08uk00jlkw2r1b769x00bmkpfg'>
+            <connection APIVersion='' authType='none' authentication='no' channel='http' class='webdata-direct' connectionName='Hotel API Connector' filename='' increment-key='' path='/' port='8080' scriptVersion='' secondary_whitelist='' server='localhost' urlQuery='v=100' username='' usernameAlias='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='webdata-direct.0x08uk00jlkw2r1b769x00bmkpfg' name='Hotel Sentiment Data' table='[hotelData]' type='table' />
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>Hotel_ID</remote-name>
+            <remote-type>-1</remote-type>
+            <local-name>[Hotel_ID]</local-name>
+            <parent-name>[Hotel Sentiment Data]</parent-name>
+            <remote-alias>Hotel_ID</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='RemoteTypeName'>&quot;int&quot;</attribute>
+              <attribute datatype='boolean' name='filterable_column'>false</attribute>
+            </attributes>
+            <object-id>[hotelData_71071483C69D462ABA7486B436E6CB25]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Hotel_Brand</remote-name>
+            <remote-type>-1</remote-type>
+            <local-name>[Hotel_Brand]</local-name>
+            <parent-name>[Hotel Sentiment Data]</parent-name>
+            <remote-alias>Hotel_Brand</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='RemoteTypeName'>&quot;string&quot;</attribute>
+              <attribute datatype='boolean' name='filterable_column'>false</attribute>
+            </attributes>
+            <object-id>[hotelData_71071483C69D462ABA7486B436E6CB25]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Total_Words</remote-name>
+            <remote-type>-1</remote-type>
+            <local-name>[Total_Words]</local-name>
+            <parent-name>[Hotel Sentiment Data]</parent-name>
+            <remote-alias>Total_Words</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='RemoteTypeName'>&quot;int&quot;</attribute>
+              <attribute datatype='boolean' name='filterable_column'>false</attribute>
+            </attributes>
+            <object-id>[hotelData_71071483C69D462ABA7486B436E6CB25]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Count_Good</remote-name>
+            <remote-type>-1</remote-type>
+            <local-name>[Count_Good]</local-name>
+            <parent-name>[Hotel Sentiment Data]</parent-name>
+            <remote-alias>Count_Good</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='RemoteTypeName'>&quot;int&quot;</attribute>
+              <attribute datatype='boolean' name='filterable_column'>false</attribute>
+            </attributes>
+            <object-id>[hotelData_71071483C69D462ABA7486B436E6CB25]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Count_Average</remote-name>
+            <remote-type>-1</remote-type>
+            <local-name>[Count_Average]</local-name>
+            <parent-name>[Hotel Sentiment Data]</parent-name>
+            <remote-alias>Count_Average</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='RemoteTypeName'>&quot;int&quot;</attribute>
+              <attribute datatype='boolean' name='filterable_column'>false</attribute>
+            </attributes>
+            <object-id>[hotelData_71071483C69D462ABA7486B436E6CB25]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Count_Medium</remote-name>
+            <remote-type>-1</remote-type>
+            <local-name>[Count_Medium]</local-name>
+            <parent-name>[Hotel Sentiment Data]</parent-name>
+            <remote-alias>Count_Medium</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='RemoteTypeName'>&quot;int&quot;</attribute>
+              <attribute datatype='boolean' name='filterable_column'>false</attribute>
+            </attributes>
+            <object-id>[hotelData_71071483C69D462ABA7486B436E6CB25]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Count_Worst</remote-name>
+            <remote-type>-1</remote-type>
+            <local-name>[Count_Worst]</local-name>
+            <parent-name>[Hotel Sentiment Data]</parent-name>
+            <remote-alias>Count_Worst</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='RemoteTypeName'>&quot;int&quot;</attribute>
+              <attribute datatype='boolean' name='filterable_column'>false</attribute>
+            </attributes>
+            <object-id>[hotelData_71071483C69D462ABA7486B436E6CB25]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Count_Neutral</remote-name>
+            <remote-type>-1</remote-type>
+            <local-name>[Count_Neutral]</local-name>
+            <parent-name>[Hotel Sentiment Data]</parent-name>
+            <remote-alias>Count_Neutral</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='RemoteTypeName'>&quot;int&quot;</attribute>
+              <attribute datatype='boolean' name='filterable_column'>false</attribute>
+            </attributes>
+            <object-id>[hotelData_71071483C69D462ABA7486B436E6CB25]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Cluster_0</remote-name>
+            <remote-type>-1</remote-type>
+            <local-name>[Cluster_0]</local-name>
+            <parent-name>[Hotel Sentiment Data]</parent-name>
+            <remote-alias>Cluster_0</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='RemoteTypeName'>&quot;int&quot;</attribute>
+              <attribute datatype='boolean' name='filterable_column'>false</attribute>
+            </attributes>
+            <object-id>[hotelData_71071483C69D462ABA7486B436E6CB25]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Cluster_1</remote-name>
+            <remote-type>-1</remote-type>
+            <local-name>[Cluster_1]</local-name>
+            <parent-name>[Hotel Sentiment Data]</parent-name>
+            <remote-alias>Cluster_1</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='RemoteTypeName'>&quot;int&quot;</attribute>
+              <attribute datatype='boolean' name='filterable_column'>false</attribute>
+            </attributes>
+            <object-id>[hotelData_71071483C69D462ABA7486B436E6CB25]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Cluster_2</remote-name>
+            <remote-type>-1</remote-type>
+            <local-name>[Cluster_2]</local-name>
+            <parent-name>[Hotel Sentiment Data]</parent-name>
+            <remote-alias>Cluster_2</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='RemoteTypeName'>&quot;int&quot;</attribute>
+              <attribute datatype='boolean' name='filterable_column'>false</attribute>
+            </attributes>
+            <object-id>[hotelData_71071483C69D462ABA7486B436E6CB25]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Cluster_3</remote-name>
+            <remote-type>-1</remote-type>
+            <local-name>[Cluster_3]</local-name>
+            <parent-name>[Hotel Sentiment Data]</parent-name>
+            <remote-alias>Cluster_3</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='RemoteTypeName'>&quot;int&quot;</attribute>
+              <attribute datatype='boolean' name='filterable_column'>false</attribute>
+            </attributes>
+            <object-id>[hotelData_71071483C69D462ABA7486B436E6CB25]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Cluster_4</remote-name>
+            <remote-type>-1</remote-type>
+            <local-name>[Cluster_4]</local-name>
+            <parent-name>[Hotel Sentiment Data]</parent-name>
+            <remote-alias>Cluster_4</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='RemoteTypeName'>&quot;int&quot;</attribute>
+              <attribute datatype='boolean' name='filterable_column'>false</attribute>
+            </attributes>
+            <object-id>[hotelData_71071483C69D462ABA7486B436E6CB25]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Measure Names' datatype='string' name='[:Measure Names]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Cluster_0:qk]&quot;' value='Staff &amp; Service' />
+          <alias key='&quot;[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Cluster_1:qk]&quot;' value='Room &amp; Bed Comfort' />
+          <alias key='&quot;[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Cluster_2:qk]&quot;' value='Price &amp; Billing' />
+          <alias key='&quot;[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Cluster_3:qk]&quot;' value='Location &amp; Transport' />
+          <alias key='&quot;[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Cluster_4:qk]&quot;' value='Food &amp; Ambiance' />
+        </aliases>
+      </column>
+      <column caption='dummy' datatype='integer' name='[Calculation_1058285069733888]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Hotel Filter Calc' datatype='boolean' name='[Calculation_1058285088886791]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[Hotel_Brand] = [Parameters].[Parameter 1]' />
+      </column>
+      <column caption='Cluster 0' datatype='integer' name='[Cluster_0]' role='measure' type='quantitative' />
+      <column caption='Cluster 1' datatype='integer' name='[Cluster_1]' role='measure' type='quantitative' />
+      <column caption='Cluster 2' datatype='integer' name='[Cluster_2]' role='measure' type='quantitative' />
+      <column caption='Cluster 3' datatype='integer' name='[Cluster_3]' role='measure' type='quantitative' />
+      <column caption='Cluster 4' datatype='integer' name='[Cluster_4]' role='measure' type='quantitative' />
+      <column caption='Count Average' datatype='integer' name='[Count_Average]' role='measure' type='quantitative' />
+      <column caption='Count Good' datatype='integer' name='[Count_Good]' role='measure' type='quantitative' />
+      <column caption='Count Medium' datatype='integer' name='[Count_Medium]' role='measure' type='quantitative' />
+      <column caption='Count Neutral' datatype='integer' name='[Count_Neutral]' role='measure' type='quantitative' />
+      <column caption='Count Worst' datatype='integer' name='[Count_Worst]' role='measure' type='quantitative' />
+      <column caption='Hotel Brand' datatype='string' name='[Hotel_Brand]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;HILTON_UNSUPERVISED_TOPICS&quot;' value='Hilton' />
+          <alias key='&quot;HOLIDAY_INN_UNSUPERVISED_TOPICS&quot;' value='Holiday Inn' />
+          <alias key='&quot;MARRIOTT_UNSUPERVISED_TOPICS&quot;' value='Marriot' />
+        </aliases>
+      </column>
+      <column caption='Hotel ID' datatype='integer' name='[Hotel_ID]' role='dimension' type='ordinal' />
+      <column caption='Measure Values' datatype='real' name='[Multiple Values]' role='measure' type='quantitative' />
+      <column caption='Total Words' datatype='integer' name='[Total_Words]' role='measure' type='quantitative' />
+      <column caption='Hotel Sentiment Data' datatype='table' name='[__tableau_internal_object_id__].[hotelData_71071483C69D462ABA7486B436E6CB25]' role='measure' type='quantitative' />
+      <column-instance column='[Calculation_1058285069733888]' derivation='Sum' name='[sum:Calculation_1058285069733888:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Cluster_0]' derivation='Sum' name='[sum:Cluster_0:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Cluster_1]' derivation='Sum' name='[sum:Cluster_1:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Cluster_2]' derivation='Sum' name='[sum:Cluster_2:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Cluster_3]' derivation='Sum' name='[sum:Cluster_3:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Cluster_4]' derivation='Sum' name='[sum:Cluster_4:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Count_Average]' derivation='Sum' name='[sum:Count_Average:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Count_Good]' derivation='Sum' name='[sum:Count_Good:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Count_Medium]' derivation='Sum' name='[sum:Count_Medium:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Count_Neutral]' derivation='Sum' name='[sum:Count_Neutral:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Count_Worst]' derivation='Sum' name='[sum:Count_Worst:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Total_Words]' derivation='Sum' name='[sum:Total_Words:qk]' pivot='key' type='quantitative' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='C:/Users/ASC/Documents/My Tableau Repository/Datasources/federated.1eyermy04jhyma18xo6b30o2b3b4_0c2tze10yys9co19m4u2201co4hh.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='05/24/2026 05:37:31 PM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <refresh>
+            <refresh-event add-from-file-path='Hotel API Connector (2)' increment-value='%null%' refresh-type='create' rows-inserted='3' timestamp-start='2026-05-24 17:37:27.921' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Hotel_ID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Hotel_ID]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Hotel_ID</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Hotel Sentiment Data</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[hotelData_71071483C69D462ABA7486B436E6CB25]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Hotel_Brand</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Hotel_Brand]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Hotel_Brand</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Hotel Sentiment Data</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LROOT' />
+              <object-id>[hotelData_71071483C69D462ABA7486B436E6CB25]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Total_Words</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Total_Words]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Total_Words</remote-alias>
+              <ordinal>2</ordinal>
+              <family>Hotel Sentiment Data</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[hotelData_71071483C69D462ABA7486B436E6CB25]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Count_Good</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Count_Good]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Count_Good</remote-alias>
+              <ordinal>3</ordinal>
+              <family>Hotel Sentiment Data</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[hotelData_71071483C69D462ABA7486B436E6CB25]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Count_Average</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Count_Average]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Count_Average</remote-alias>
+              <ordinal>4</ordinal>
+              <family>Hotel Sentiment Data</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[hotelData_71071483C69D462ABA7486B436E6CB25]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Count_Medium</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Count_Medium]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Count_Medium</remote-alias>
+              <ordinal>5</ordinal>
+              <family>Hotel Sentiment Data</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[hotelData_71071483C69D462ABA7486B436E6CB25]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Count_Worst</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Count_Worst]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Count_Worst</remote-alias>
+              <ordinal>6</ordinal>
+              <family>Hotel Sentiment Data</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[hotelData_71071483C69D462ABA7486B436E6CB25]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Count_Neutral</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Count_Neutral]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Count_Neutral</remote-alias>
+              <ordinal>7</ordinal>
+              <family>Hotel Sentiment Data</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[hotelData_71071483C69D462ABA7486B436E6CB25]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Cluster_0</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Cluster_0]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Cluster_0</remote-alias>
+              <ordinal>8</ordinal>
+              <family>Hotel Sentiment Data</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[hotelData_71071483C69D462ABA7486B436E6CB25]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Cluster_1</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Cluster_1]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Cluster_1</remote-alias>
+              <ordinal>9</ordinal>
+              <family>Hotel Sentiment Data</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[hotelData_71071483C69D462ABA7486B436E6CB25]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Cluster_2</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Cluster_2]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Cluster_2</remote-alias>
+              <ordinal>10</ordinal>
+              <family>Hotel Sentiment Data</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[hotelData_71071483C69D462ABA7486B436E6CB25]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Cluster_3</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Cluster_3]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Cluster_3</remote-alias>
+              <ordinal>11</ordinal>
+              <family>Hotel Sentiment Data</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[hotelData_71071483C69D462ABA7486B436E6CB25]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Cluster_4</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Cluster_4]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Cluster_4</remote-alias>
+              <ordinal>12</ordinal>
+              <family>Hotel Sentiment Data</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[hotelData_71071483C69D462ABA7486B436E6CB25]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-aliased-fields='true' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.1eyermy04jhyma18xo6b30o2b3b4]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Cluster_0:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Cluster_1:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Count_Good:qk]&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Cluster_4:qk]&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Total_Words:qk]&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Calculation_1058285069733888:qk]&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Count_Neutral:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Cluster_2:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Count_Worst:qk]&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Count_Medium:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Cluster_3:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Count_Average:qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <default-sorts>
+        <manual-sort column='[:Measure Names]' direction='ASC'>
+          <dictionary>
+            <bucket>&quot;[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Count_Average:qk]&quot;</bucket>
+            <bucket>&quot;[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Count_Good:qk]&quot;</bucket>
+            <bucket>&quot;[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Count_Medium:qk]&quot;</bucket>
+            <bucket>&quot;[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Count_Neutral:qk]&quot;</bucket>
+            <bucket>&quot;[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Count_Worst:qk]&quot;</bucket>
+            <bucket>&quot;[federated.1eyermy04jhyma18xo6b30o2b3b4].[__tableau_internal_object_id__].[cnt:hotelData_71071483C69D462ABA7486B436E6CB25:qk]&quot;</bucket>
+            <bucket>&quot;[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Cluster_0:qk]&quot;</bucket>
+            <bucket>&quot;[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Cluster_1:qk]&quot;</bucket>
+            <bucket>&quot;[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Cluster_3:qk]&quot;</bucket>
+            <bucket>&quot;[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Cluster_4:qk]&quot;</bucket>
+            <bucket>&quot;[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Cluster_2:qk]&quot;</bucket>
+            <bucket>&quot;[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Total_Words:qk]&quot;</bucket>
+            <bucket>&quot;[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Calculation_1058285069733888:qk]&quot;</bucket>
+          </dictionary>
+        </manual-sort>
+      </default-sorts>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Select Hotel' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;MARRIOTT_UNSUPERVISED_TOPICS&quot;'>
+          <calculation class='tableau' formula='&quot;MARRIOTT_UNSUPERVISED_TOPICS&quot;' />
+        </column>
+      </datasource-dependencies>
+      <object-graph>
+        <objects>
+          <object caption='Hotel Sentiment Data' id='hotelData_71071483C69D462ABA7486B436E6CB25'>
+            <properties context=''>
+              <relation connection='webdata-direct.0x08uk00jlkw2r1b769x00bmkpfg' name='Hotel Sentiment Data' table='[hotelData]' type='table' />
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#e15759' fontsize='18'>Donut Chart of Hotels</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Hotel API Connector (2)' name='federated.1eyermy04jhyma18xo6b30o2b3b4' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Select Hotel' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;MARRIOTT_UNSUPERVISED_TOPICS&quot;'>
+              <calculation class='tableau' formula='&quot;MARRIOTT_UNSUPERVISED_TOPICS&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.1eyermy04jhyma18xo6b30o2b3b4'>
+            <column caption='dummy' datatype='integer' name='[Calculation_1058285069733888]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='1' />
+            </column>
+            <column caption='Hotel Filter Calc' datatype='boolean' name='[Calculation_1058285088886791]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Hotel_Brand] = [Parameters].[Parameter 1]' />
+            </column>
+            <column caption='Count Average' datatype='integer' name='[Count_Average]' role='measure' type='quantitative' />
+            <column caption='Count Good' datatype='integer' name='[Count_Good]' role='measure' type='quantitative' />
+            <column caption='Count Medium' datatype='integer' name='[Count_Medium]' role='measure' type='quantitative' />
+            <column caption='Count Neutral' datatype='integer' name='[Count_Neutral]' role='measure' type='quantitative' />
+            <column caption='Count Worst' datatype='integer' name='[Count_Worst]' role='measure' type='quantitative' />
+            <column caption='Hotel Brand' datatype='string' name='[Hotel_Brand]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='&quot;HILTON_UNSUPERVISED_TOPICS&quot;' value='Hilton' />
+                <alias key='&quot;HOLIDAY_INN_UNSUPERVISED_TOPICS&quot;' value='Holiday Inn' />
+                <alias key='&quot;MARRIOTT_UNSUPERVISED_TOPICS&quot;' value='Marriot' />
+              </aliases>
+            </column>
+            <column-instance column='[Calculation_1058285088886791]' derivation='None' name='[none:Calculation_1058285088886791:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1058285069733888]' derivation='Sum' name='[sum:Calculation_1058285069733888:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Count_Average]' derivation='Sum' name='[sum:Count_Average:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Count_Good]' derivation='Sum' name='[sum:Count_Good:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Count_Medium]' derivation='Sum' name='[sum:Count_Medium:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Count_Neutral]' derivation='Sum' name='[sum:Count_Neutral:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Count_Worst]' derivation='Sum' name='[sum:Count_Worst:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1eyermy04jhyma18xo6b30o2b3b4].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Count_Average:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Count_Good:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Count_Medium:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Count_Neutral:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Count_Worst:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.1eyermy04jhyma18xo6b30o2b3b4].[none:Calculation_1058285088886791:nk]'>
+            <groupfilter function='member' level='[none:Calculation_1058285088886791:nk]' member='true' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1eyermy04jhyma18xo6b30o2b3b4].[none:Calculation_1058285088886791:nk]</column>
+            <column>[federated.1eyermy04jhyma18xo6b30o2b3b4].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='1' field='[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Calculation_1058285069733888:qk]' field-type='quantitative' fold='true' scope='rows' type='space' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <encodings>
+              <text column='[federated.1eyermy04jhyma18xo6b30o2b3b4].[Multiple Values]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Calculation_1058285069733888:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <text column='[federated.1eyermy04jhyma18xo6b30o2b3b4].[Multiple Values]' />
+              <color column='[federated.1eyermy04jhyma18xo6b30o2b3b4].[:Measure Names]' />
+              <wedge-size column='[federated.1eyermy04jhyma18xo6b30o2b3b4].[Multiple Values]' />
+            </encodings>
+            <style>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='match' />
+                <format attr='font-weight' value='bold' />
+                <format attr='font-size' value='15' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='size' value='5.9130978584289551' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Calculation_1058285069733888:qk]' y-index='1'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Heatmap' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <text column='[federated.1eyermy04jhyma18xo6b30o2b3b4].[Multiple Values]' />
+              <lod column='[federated.1eyermy04jhyma18xo6b30o2b3b4].[Multiple Values]' />
+              <lod column='[federated.1eyermy04jhyma18xo6b30o2b3b4].[:Measure Names]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='size' value='5.9130978584289551' />
+                <encoding attr='density-color' palette='tableau-blue-light' type='interpolated' />
+                <format attr='density-intensity' value='2.0951776504516602' />
+                <format attr='density-kernel-size' value='7.7539858818054199' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#ffffff' />
+                <format attr='mark-transparency' value='255' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Calculation_1058285069733888:qk] + [federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Calculation_1058285069733888:qk])</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{7C998D58-C636-45C1-AB5D-AAE0F3232638}' />
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#e15759' fontname='Benton Sans Book'>Cluster Analysis: Competitor Brand Benchmarking</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Hotel API Connector (2)' name='federated.1eyermy04jhyma18xo6b30o2b3b4' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1eyermy04jhyma18xo6b30o2b3b4'>
+            <column caption='Cluster 0' datatype='integer' name='[Cluster_0]' role='measure' type='quantitative' />
+            <column caption='Cluster 1' datatype='integer' name='[Cluster_1]' role='measure' type='quantitative' />
+            <column caption='Cluster 2' datatype='integer' name='[Cluster_2]' role='measure' type='quantitative' />
+            <column caption='Cluster 3' datatype='integer' name='[Cluster_3]' role='measure' type='quantitative' />
+            <column caption='Cluster 4' datatype='integer' name='[Cluster_4]' role='measure' type='quantitative' />
+            <column caption='Hotel Brand' datatype='string' name='[Hotel_Brand]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='&quot;HILTON_UNSUPERVISED_TOPICS&quot;' value='Hilton' />
+                <alias key='&quot;HOLIDAY_INN_UNSUPERVISED_TOPICS&quot;' value='Holiday Inn' />
+                <alias key='&quot;MARRIOTT_UNSUPERVISED_TOPICS&quot;' value='Marriot' />
+              </aliases>
+            </column>
+            <column-instance column='[Hotel_Brand]' derivation='None' name='[none:Hotel_Brand:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Cluster_0]' derivation='Sum' name='[sum:Cluster_0:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Cluster_1]' derivation='Sum' name='[sum:Cluster_1:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Cluster_2]' derivation='Sum' name='[sum:Cluster_2:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Cluster_3]' derivation='Sum' name='[sum:Cluster_3:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Cluster_4]' derivation='Sum' name='[sum:Cluster_4:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1eyermy04jhyma18xo6b30o2b3b4].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Cluster_4:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Cluster_3:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Cluster_2:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Cluster_1:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1eyermy04jhyma18xo6b30o2b3b4].[sum:Cluster_0:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1eyermy04jhyma18xo6b30o2b3b4].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='on' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1eyermy04jhyma18xo6b30o2b3b4].[:Measure Names]' />
+              <text column='[federated.1eyermy04jhyma18xo6b30o2b3b4].[:Measure Names]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1eyermy04jhyma18xo6b30o2b3b4].[Multiple Values]</rows>
+        <cols>([federated.1eyermy04jhyma18xo6b30o2b3b4].[none:Hotel_Brand:nk] / [federated.1eyermy04jhyma18xo6b30o2b3b4].[:Measure Names])</cols>
+      </table>
+      <simple-id uuid='{880C1C7D-D06F-4DEC-91BB-68DE2169734E}' />
+    </worksheet>
+  </worksheets>
+  <windows saved-dpi-scale-factor='1.25' source-height='63'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='1' param='[federated.1eyermy04jhyma18xo6b30o2b3b4].[:Measure Names]' type='color' />
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[Parameters].[Parameter 1]</field>
+            <field>[federated.1eyermy04jhyma18xo6b30o2b3b4].[:Measure Names]</field>
+            <field>[federated.1eyermy04jhyma18xo6b30o2b3b4].[none:Calculation_1058285080432642:nk]</field>
+            <field>[federated.1eyermy04jhyma18xo6b30o2b3b4].[none:Calculation_1058285083406339:nk]</field>
+            <field>[federated.1eyermy04jhyma18xo6b30o2b3b4].[none:Calculation_1058285088886791:nk]</field>
+            <field>[federated.1eyermy04jhyma18xo6b30o2b3b4].[none:Hotel_Brand:nk]</field>
+          </color-one-way>
+        </highlight>
+        <default-map-tool-selection tool='4' />
+      </viewpoint>
+      <simple-id uuid='{ED6C0BA1-9D06-4497-B007-82E7B7917473}' />
+    </window>
+    <window class='worksheet' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1eyermy04jhyma18xo6b30o2b3b4].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.1eyermy04jhyma18xo6b30o2b3b4].[:Measure Names]</field>
+            <field>[federated.1eyermy04jhyma18xo6b30o2b3b4].[none:Hotel_Brand:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{9AD32489-3CCA-4F3E-B0F6-7FB6874D3EFC}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      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
+      VzaHCgAAAABJRU5ErkJggg==
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 2' width='192'>
+      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
+      RU5ErkJggg==
+    </thumbnail>
+  </thumbnails>
+</workbook>
